@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Blog</title>
+    <link rel="stylesheet" href="styles.css" >
+</head>
+<body>
+    <header>
+        <div class="blog-header">
+            <h1>Meu Blog</h1>
+            <img src="img/foto de perfil.jpg">
+            <!-- Barra de pesquisa -->
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Buscar...">
+                <button type="button" onclick="searchPosts()">Buscar</button>
+            </div>
+        </div>
+    </header>
+    <div class="banner">
+        <img src="img/banner1.0.jpg" alt="banner">
+    </div>
+    <main>
+    <br> 
+        
+        <section class="posts">
+            <!-- Postagem 1 -->
+            <article>
+                <h2>Explorando o mundo Animal</h2>
+                <img src="img/zoologico.jpg" alt="zoologico">
+                <p>Embarque conosco em uma jornada única pelo fascinante reino animal! 🌍🦓 Descubra a majestade dos leões, a agilidade dos macacos e a elegância das aves exóticas.
+                🦁🐒🦚 No nosso zoológico, cada habitat é uma oportunidade de aprender sobre a incrível biodiversidade do nosso planeta.
+                 🌿✨ Junte-se a nós para uma experiência inesquecível de conexão com a natureza! 🌳🐾 #ZooAdventure #DiversidadeAnimal #NaturezaMagnífica.</p>
+              <br>
+            </article>
+            <!-- Postagem 2 -->
+            <article>
+                <h2>Diversas experiências gastronomicas</h2>
+                <img src="img/pratos.jpg" alt="pratos">
+                <p>Sabores elevados à perfeição: uma sinfonia culinária que transcende o ordinário. ✨ Deleite-se com a sofisticação de cada prato, onde cada ingrediente é uma nota na composição da excelência gastronômica. 
+                🍽️✨ Descubra o luxo que a boa comida pode proporcionar. #GastronomiaExclusiva #Saborsofisticado #ExperiênciaCulinária.</p>
+            </article>
+        </section>
+        <aside class="sidebar">
+            <section>
+                <h2>Perfil do Blogueiro</h2>
+                <img src="img/foto do blogueiro.jpg" alt="Foto do Blogueiro">
+                <p>Um blogueiro apaixonado por compartilhar suas experiências e insights. Navegando pelos temas que mais o cativam, ele tece narrativas envolventes, oferece dicas práticas e compartilha sua perspectiva única com uma comunidade ávida por descobertas. Seu estilo autêntico e cativante faz com que cada post seja uma jornada cativante para seus leitores.</p>
+            </section>
+            <section>
+                <br>
+                <h2>Minha parceira</h2>
+                <img src="img/anuncio.jpg" alt="anuncio">
+                <br>
+                <h1>Venha se aventurar em meio a tanta diversidade de cores, estilos e modelos.</h1>
+            </section>
+        </aside>
+    </main>
+    <footer>
+        <p>Direitos Autorais &copy; 2024 Meu Blog</p>
+    </footer>
+
+    <script>
+        function searchPosts() {
+            var input, filter, articles, article, h2, i, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            articles = document.getElementsByTagName("article");
+            for (i = 0; i < articles.length; i++) {
+                article = articles[i];
+                h2 = article.getElementsByTagName("h2")[0];
+                txtValue = h2.textContent || h2.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    article.style.display = "";
+                } else {
+                    article.style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
